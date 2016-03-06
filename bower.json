@@ -1,0 +1,20 @@
+{
+  "name": "socket",
+  "description": "",
+  "main": "gulpfile.js",
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib/js",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.0",
+    "socket.io-client": "~1.4.5"
+  }
+}

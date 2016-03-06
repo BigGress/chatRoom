@@ -1,0 +1,27 @@
+{
+  "name": "socket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "express": "^4.13.4",
+    "socket.io": "^1.4.5",
+    "socket.io-client": "^1.4.5",
+    "mongoose":"*",
+    "express-session":"*",
+    "npm-watch":"*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "server":"node server.js",
+    "start": "npm-watch"
+  },
+  "watch":{
+    "server":{
+      "patterns":["./","./app/**/*"],
+      "extensions":"js"
+    }
+  },
+  "author": "",
+  "license": "ISC"
+}

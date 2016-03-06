@@ -1,0 +1,27 @@
+.messageItem{
+ padding-left: 1%;
+ -webkit-transition: transform .2s;
+ -o-transition: transform .2s;
+ transition: transform .2s;
+ transform-origin: 50% 0;
+}
+.messageItem.ng-enter{
+ -webkit-transform: scaleY(0);
+ -moz-transform: scaleY(0);
+ -ms-transform: scaleY(0);
+ -o-transform: scaleY(0);
+ transform: scaleY(0);
+}
+.messageItem.ng-enter-active{
+ -webkit-transform: scaleY(0);
+ -moz-transform: scaleY(0);
+ -ms-transform: scaleY(0);
+ -o-transform: scaleY(0);
+ transform: scaleY(0);
+}
+.messageItem:hover{
+ border: 1px solid #DDDDDD;
+ -webkit-box-shadow: 1px 1px 2px #ddd;
+ -moz-box-shadow: 1px 1px 2px #ddd;
+ box-shadow: 1px 1px 2px #ddd;
+}

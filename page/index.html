@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <title>聊天</title>
+    <link rel="stylesheet" href="/static/css/style.css"/>
+    <link rel="stylesheet" href="/static/css/animation.css"/>
+    <script src="/static/js/socket.io-client/socket.io.js"></script>
+    <script src="/static/js/angular/angular.min.js"></script>
+    <script src="/static/js/angular-animate/angular-animate.min.js"></script>
+    <script src="/static/index.js"></script>
+    <script src="/static/directive.js"></script>
+</head>
+<body ng-controller="message">
+<div class="header">
+    <div class="messageBtn fl borderRaduis" ng-click="getMessage('next')">聊天记录</div>
+    <div class="btnResetName fr borderRaduis" ng-click="resetName()">重命名</div>
+</div>
+<div class="message">
+    <!--<h1>聊天记录</h1>-->
+    <ul class="box">
+        <li class="messageItem" ng-repeat="item in messageArr">
+            <span ng-if="item.stylemessage">
+                <span class="join">
+                    {{item.stylemessage}}
+                </span>
+            </span>
+            <span ng-if="!item.stylemessage">
+                <!--公共聊天-->
+                <span ng-if="item.id">
+                    <span class="name" ng-click="setSendP($event)" data-id="{{item.id}}">{{item.name}}</span>
+                </span>
+                <!--私聊-->
+                <span ng-if="!item.id">
+                    <span class="name">{{item.name}}向您发送私聊信息</span>
+                </span>
+                <span class="time">{{item.time|date:"MM-dd hh:mm:ss"}}</span>
+                <span class="messageDetail">
+                    <p>{{item.message}}</p>
+                </span>
+            </span>
+        </li>
+    </ul>
+</div>
+<div class="messageBox">
+    <input type="text" class="borderRaduis" id="text" ng-keyup="subByKey($event)" ng-model="sendMessage" placeholder="请输入.."/>
+    <button id="submit" class="borderRaduis" ng-click="submit()">发送</button>
+</div>
+<name-alert></name-alert>
+<message-alert></message-alert>
+
+
+</body>
+</html>
